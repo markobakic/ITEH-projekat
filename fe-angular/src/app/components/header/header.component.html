@@ -1,0 +1,64 @@
+<div class="header">
+  <div class="header__menu">
+    <h1>SkiShop</h1>
+    <a mat-raised-button routerLink="/products" routerLinkActive="active"
+      >All Products</a
+    >
+    <a
+      mat-raised-button
+      routerLink="/helmets"
+      routerLinkActive="active"
+      class="icon"
+      >&nbsp;<mat-icon>face</mat-icon>&nbsp;</a
+    >
+    <a
+      mat-raised-button
+      routerLink="/skis"
+      routerLinkActive="active"
+      class="icon"
+      >&nbsp;<mat-icon>downhill_skiing</mat-icon>&nbsp;</a
+    >
+    <a
+      mat-raised-button
+      routerLink="/boots"
+      routerLinkActive="active"
+      class="icon"
+      >&nbsp;<mat-icon>airline_seat_legroom_normal</mat-icon>&nbsp;</a
+    >
+  </div>
+  <div class="header__auth">
+    <a
+      mat-raised-button
+      routerLink="/login"
+      routerLinkActive="active"
+      *ngIf="!userLoggedIn"
+      >Log In</a
+    >
+    <a
+      mat-raised-button
+      routerLink="/signup"
+      routerLinkActive="active"
+      *ngIf="!userLoggedIn"
+      >Sign Up</a
+    >
+    <a
+      mat-raised-button
+      routerLink="/cart"
+      routerLinkActive="active"
+      *ngIf="userLoggedIn"
+      class="icon-right"
+      ><mat-icon>shopping_cart</mat-icon></a
+    >
+    <a
+      mat-raised-button
+      routerLink="/profile"
+      routerLinkActive="active"
+      *ngIf="userLoggedIn"
+      class="icon-right"
+      ><mat-icon>account_circle</mat-icon></a
+    >
+    <button mat-raised-button *ngIf="userLoggedIn" (click)="logOut()">
+      Log Out
+    </button>
+  </div>
+</div>

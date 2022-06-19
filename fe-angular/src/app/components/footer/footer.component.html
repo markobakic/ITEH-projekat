@@ -1,0 +1,15 @@
+<div class="footer">
+  <a class="contact" routerLink="/contact"> Contact Us </a>
+  <div class="rights">
+    <mat-icon> copyright </mat-icon>
+    <span> 2022 Jovana, Aleksa, Marko. All Rights Reserved. </span>
+  </div>
+  <div class="toggle">
+    <mat-icon> light_mode </mat-icon>
+    <mat-slide-toggle
+      color="black"
+      (change)="handleToggleChange($event)"
+    ></mat-slide-toggle>
+    <mat-icon> dark_mode </mat-icon>
+  </div>
+</div>

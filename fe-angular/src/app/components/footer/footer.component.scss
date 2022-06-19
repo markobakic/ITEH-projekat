@@ -1,0 +1,39 @@
+:host {
+    .footer {
+        height: 40px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #3f51b5;
+        position: fixed;
+        bottom: 0;
+        z-index: 100;
+        color: white;
+        box-shadow: 0px -5px 8px rgba(#000000, 0.4);
+
+        .contact {
+            margin-left: 30px;
+            font-size: 16px;
+            color: white;
+        }
+
+        .rights {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            span {
+                font-size: 16px;
+            }
+        }
+
+        .toggle {
+            margin-right: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+    }
+}
