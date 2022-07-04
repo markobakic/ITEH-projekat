@@ -1,0 +1,12 @@
+@import '../../mixins/base.scss';
+
+:host {
+    .filter-button {
+        display: block;
+        margin: auto;
+    }
+
+    .product-list {
+        @include products-style;
+    }
+}

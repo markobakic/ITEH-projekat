@@ -1,0 +1,23 @@
+<mat-card class="product">
+  <mat-card-header>
+    <mat-card-title> {{ productName }} </mat-card-title>
+    <mat-card-subtitle> {{ category?.categoryName }} </mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{ imageUrl }}" alt="{{ productName }}" />
+  <mat-card-content>
+    <span> Gender: {{ gender }} </span>
+    <span> Color: {{ color }} </span>
+    <span> Size: {{ size | inches }} </span>
+  </mat-card-content>
+  <mat-card-actions>
+    <span class="price"> {{ price | thousandSeparator | pricePipe }} </span>
+    <button
+      mat-raised-button
+      color="primary"
+      *ngIf="userLoggedIn"
+      (click)="addToCart()"
+    >
+      <mat-icon>add_shopping_cart</mat-icon> Add To Cart
+    </button>
+  </mat-card-actions>
+</mat-card>

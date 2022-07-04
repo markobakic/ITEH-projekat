@@ -1,0 +1,23 @@
+<app-category-heading [categoryHeading]="heading">
+</app-category-heading>
+<button 
+    mat-mini-fab 
+    color="primary" 
+    class="filter-button"
+    (click)="openSortDialog()">
+    <mat-icon>sort</mat-icon>
+</button>
+<div class="product-list">
+    <app-product 
+        *ngFor="let product of allProducts?.products"
+        [productId]="product.productId"
+        [productName]="product.productName"
+        [price]="product.price"
+        [gender]="product.gender"
+        [size]="product.size"
+        [color]="product.color"
+        [imageUrl]="product.imageUrl"
+        [categoryId]="product.categoryId"
+        >
+    </app-product>
+</div>
