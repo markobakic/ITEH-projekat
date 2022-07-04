@@ -1,0 +1,36 @@
+:host {
+    position: relative;
+    box-shadow: 5px 5px 5px rgba(#000000, 0.4);
+    border: 1px solid grey;
+    margin-right: 15px;
+
+    mat-card-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        margin: 0;
+
+        img {
+            width: 100px;
+            margin: 0;
+        }
+
+        .product-info {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .price {
+            font-size: 24px;
+            font-weight: 700;
+            justify-self: end;
+            align-self: flex-end;
+        }
+    }
+
+    .remove {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+}

@@ -1,0 +1,50 @@
+<div class="cart" *ngIf="cartItems; else emptyCart">
+    <div class="cart__items">
+        <app-cart-item 
+            *ngFor="let item of cartItems"
+            [product]="item.product"
+            [cartItemId]="item.id"
+            (showNewItems)="getCartItems()">
+        </app-cart-item>
+    </div>
+    <div class="cart__checkout">
+        <mat-card>
+            <mat-card-title>
+                Checkout
+            </mat-card-title>
+            <form [formGroup]="paymentForm" (ngSubmit)="onCheckout()">
+                <mat-card-content>
+                    <div>
+                        <label>Payment method:</label>
+                        <mat-radio-group class="payment" formControlName="method">
+                            <mat-radio-button color="primary" [value]="paymentMethod.cash"> Cash </mat-radio-button>
+                            <mat-radio-button color="primary" [value]="paymentMethod.card"> Card </mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <div>
+                        <h2> Total price: </h2>
+                        <span class="price"> {{ totalPrice | thousandSeparator | pricePipe }} </span>
+                    </div>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button
+                        type="submit" 
+                        mat-raised-button 
+                        color="primary" 
+                        class="checkout-btn" 
+                        [disabled]="!validForm"> 
+                        Checkout
+                    </button>
+                </mat-card-actions>
+            </form>
+        </mat-card>
+    </div>
+</div>
+<ng-template #emptyCart>
+    <div class="empty-cart">
+        <h1>
+            Cart is empty!
+        </h1>
+    </div>
+</ng-template>
+
