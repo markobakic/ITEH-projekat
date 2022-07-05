@@ -1,0 +1,8 @@
+@import "../../mixins/base.scss";
+
+:host {
+  .boot-list {
+    @include products-style;
+    height: calc(100vh - 270px);
+  }
+}

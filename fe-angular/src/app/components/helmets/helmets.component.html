@@ -1,0 +1,15 @@
+<app-category-heading [categoryHeading]="heading"> </app-category-heading>
+<div class="helmet-list">
+  <app-product
+    *ngFor="let helmet of helmets?.products"
+    [productId]="helmet.productId"
+    [productName]="helmet.productName"
+    [price]="helmet.price"
+    [gender]="helmet.gender"
+    [size]="helmet.size"
+    [color]="helmet.color"
+    [imageUrl]="helmet.imageUrl"
+    [categoryId]="helmet.categoryId"
+  >
+  </app-product>
+</div>

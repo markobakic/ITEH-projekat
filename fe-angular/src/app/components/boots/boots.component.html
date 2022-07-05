@@ -1,0 +1,15 @@
+<app-category-heading [categoryHeading]="heading"> </app-category-heading>
+<div class="boot-list">
+  <app-product
+    *ngFor="let boot of boots?.products"
+    [productId]="boot.productId"
+    [productName]="boot.productName"
+    [price]="boot.price"
+    [gender]="boot.gender"
+    [size]="boot.size"
+    [color]="boot.color"
+    [imageUrl]="boot.imageUrl"
+    [categoryId]="boot.categoryId"
+  >
+  </app-product>
+</div>
