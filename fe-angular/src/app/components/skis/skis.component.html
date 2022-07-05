@@ -1,0 +1,15 @@
+<app-category-heading [categoryHeading]="heading"> </app-category-heading>
+<div class="ski-list">
+  <app-product
+    *ngFor="let ski of skis?.products"
+    [productId]="ski.productId"
+    [productName]="ski.productName"
+    [price]="ski.price"
+    [gender]="ski.gender"
+    [size]="ski.size"
+    [color]="ski.color"
+    [imageUrl]="ski.imageUrl"
+    [categoryId]="ski.categoryId"
+  >
+  </app-product>
+</div>
