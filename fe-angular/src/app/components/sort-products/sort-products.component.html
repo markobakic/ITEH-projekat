@@ -1,0 +1,11 @@
+<div class="sort-dialog">
+    <h1>Sort Products</h1>
+    <form [formGroup]="sortForm">
+        <mat-radio-group area-label="Select an option" name="sort" formControlName="sort">
+            <mat-radio-button color="primary" value="PRICE_ASC"> By price ASC </mat-radio-button>
+            <mat-radio-button color="primary" value="PRICE_DESC"> By price DESC </mat-radio-button>
+            <mat-radio-button color="primary" value="NAME_ASC"> By name ASC </mat-radio-button>
+            <mat-radio-button color="primary" value="NAME_DESC"> By name DESC </mat-radio-button>
+        </mat-radio-group>
+    </form>
+</div>

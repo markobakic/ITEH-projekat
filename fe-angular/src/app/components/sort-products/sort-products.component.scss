@@ -1,0 +1,17 @@
+:host {
+    .sort-dialog {
+        h1 {
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+        }
+
+        mat-radio-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+    }
+}
