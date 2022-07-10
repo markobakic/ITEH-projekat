@@ -1,0 +1,15 @@
+<div class="contact">
+    <div class="map" id="map">
+    </div>
+    <div class="info">
+        <h1>CONTACT</h1>
+        <div class="contact-items">
+            <app-contact-item
+                *ngFor="let item of contactInfo"
+                [icon]="item.icon"
+                [title]="item.title"
+                [contact]="item.contact">
+            </app-contact-item>
+        </div>
+    </div>
+</div>

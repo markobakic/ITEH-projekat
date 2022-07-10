@@ -1,0 +1,35 @@
+:host {
+    .contact {
+        // padding-top: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        gap: 20px;
+
+        div {
+            width: 35vw;
+            height: calc(100vh - 200px);    
+        }
+
+        .map {
+            border-radius: 10px;
+        }
+
+        .info {
+            h1 {
+                font-size: 50px;
+                text-align: center;
+                font-weight: 600;
+                margin: 30px 0;
+            }
+
+            .contact-items {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+                height: calc(100vh - 300px);
+            }
+        }
+    }
+}

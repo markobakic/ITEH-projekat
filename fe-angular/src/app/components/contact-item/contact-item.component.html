@@ -1,0 +1,8 @@
+<mat-card class="contact-item">
+    <mat-icon> {{ icon }} </mat-icon>
+    <mat-card-title> {{ title }} </mat-card-title>
+    <mat-card-content *ngIf="!contact.includes('linkedin'); else link"> {{ contact }} </mat-card-content>
+    <ng-template #link>
+        <a href="https://www.linkedin.com/dub" target="_blank"> {{ contact }} </a>
+    </ng-template>
+</mat-card>

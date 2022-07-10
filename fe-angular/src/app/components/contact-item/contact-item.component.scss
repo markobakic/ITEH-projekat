@@ -1,0 +1,17 @@
+:host {
+    .contact-item {
+        border: 1px solid grey;
+        box-shadow: 5px 5px 5px rgba(#000000, 0.4);
+        // height: 235px;
+        height: 80%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+
+        a {
+            color: #3f51b5;
+        }
+    }
+}
