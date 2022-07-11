@@ -1,0 +1,39 @@
+<div class="login-page">
+    <mat-card>
+        <mat-card-title>LOG IN</mat-card-title>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <mat-card-content>
+                <mat-form-field appearance="legacy">
+                    <mat-label>Email</mat-label>
+                    <input type="text" matInput placeholder="Enter your email" formControlName="email">
+                    <mat-icon matSuffix> email </mat-icon>
+                    <mat-hint *ngIf="emailRequired">Email is required.</mat-hint>
+                    <mat-hint *ngIf="invalidEmail">Email is invalid.</mat-hint>
+                </mat-form-field>
+                <mat-form-field appearance="legacy">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput placeholder="Enter your password" formControlName="password">
+                    <mat-icon matSuffix> vpn_key </mat-icon>
+                    <mat-hint *ngIf="passwordRequired">Password is required.</mat-hint>
+                </mat-form-field>
+            </mat-card-content>
+            <mat-card-actions>
+                <button 
+                    type="submit" 
+                    mat-raised-button 
+                    color="primary" 
+                    class="action-button"
+                    [disabled]="!validForm"> 
+                    <span *ngIf="!loading; else spinner">Log In</span> 
+                    <ng-template #spinner>
+                        <mat-spinner color="accent" [diameter]="35"></mat-spinner>
+                    </ng-template>
+                </button>
+            </mat-card-actions>
+            <div class="error-message" *ngIf="errorMessage"> 
+                <mat-icon>error_outline</mat-icon>
+                <span> {{ errorMessage}} </span>
+            </div>
+        </form>
+    </mat-card>
+</div>

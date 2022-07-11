@@ -1,0 +1,59 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.75),
+      rgba(63, 81, 181, 0.5)
+    ),
+    url("https://upload.wikimedia.org/wikipedia/commons/8/84/Ski_Famille_-_Family_Ski_Holidays.jpg");
+  background-size: cover;
+
+  .user-info {
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 5px rgba(#000000, 0.4);
+
+    mat-card-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    mat-card-content {
+      h3 {
+        margin: 10px 0;
+      }
+    }
+  }
+
+  .data-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 300px;
+
+    mat-hint {
+      color: #cc3300;
+      font-size: 12px;
+    }
+
+    mat-spinner {
+      margin: auto;
+    }
+
+    .successful-message {
+      background-color: rgba(#99cc33, 0.6);
+      border: 2px solid #339900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #339900;
+      font-weight: 500;
+    }
+  }
+}

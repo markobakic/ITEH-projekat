@@ -1,0 +1,53 @@
+<div class="profile">
+    <mat-card class="user-info">
+        <mat-card-title>
+            User Info
+        </mat-card-title>
+        <mat-card-content>
+            <mat-divider></mat-divider>
+            <h3> ID: <strong>{{ userData?.user?.id }}</strong></h3>
+            <mat-divider></mat-divider>
+            <h3> Name: <strong>{{ userData?.user?.name }}</strong></h3>
+            <mat-divider></mat-divider>
+            <h3> Email: <strong>{{ userData?.user?.email }}</strong></h3>
+            <mat-divider></mat-divider>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Change user data
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <form [formGroup]="changeDataForm" class="data-form" (ngSubmit)="onSubmit()">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Name</mat-label>
+                    <input type="text" matInput placeholder="Enter your name" formControlName="name">
+                    <mat-icon matSuffix> face </mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="legacy">
+                    <mat-label>Email</mat-label>
+                    <input type="text" matInput placeholder="Enter your email" formControlName="email">
+                    <mat-icon matSuffix> email </mat-icon>
+                    <mat-hint *ngIf="invalidEmail">Email is invalid.</mat-hint>
+                </mat-form-field>
+                <button type="submit" 
+                        mat-raised-button 
+                        color="primary" 
+                        class="action-button" 
+                        [disabled]="!validForm">
+                    <span *ngIf="!loading; else spinner"> Change </span>
+                    <ng-template #spinner>
+                        <mat-spinner color="accent" [diameter]="35"></mat-spinner>
+                    </ng-template>
+                </button>
+                <div class="successful-message" *ngIf="successfulMessage"> 
+                    <mat-icon>check_circle_outline</mat-icon>
+                    <span> {{ successfulMessage }} </span>
+                </div>
+            </form>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

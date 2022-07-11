@@ -1,0 +1,56 @@
+<div class="signup-page">
+    <mat-card>
+        <mat-card-title>SIGN UP</mat-card-title>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <mat-card-content class="signup-content">
+                <div class="form-field">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Email</mat-label>
+                        <input type="text" matInput placeholder="Enter your email" formControlName="email">
+                        <mat-icon matSuffix> email </mat-icon>
+                        <mat-hint *ngIf="emailRequired">Email is required.</mat-hint>
+                        <mat-hint *ngIf="invalidEmail">Email is invalid.</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="form-field">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Name</mat-label>
+                        <input type="text" matInput placeholder="Enter your name" formControlName="name">
+                        <mat-icon matSuffix> person </mat-icon>
+                        <mat-hint *ngIf="nameRequired">Name is required.</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="form-field">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput placeholder="Enter your password" formControlName="password">
+                        <mat-icon matSuffix> vpn_key </mat-icon>
+                        <mat-hint *ngIf="passwordRequired">Password is required.</mat-hint>
+                        <mat-hint *ngIf="passwordMinLength">Min length is 8 characters.</mat-hint>
+                    </mat-form-field>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button 
+                    type="submit" 
+                    mat-raised-button 
+                    color="primary" 
+                    class="action-button" 
+                    [disabled]="!validForm"> 
+                    <span *ngIf="!loading; else spinner">Sign Up</span> 
+                    <ng-template #spinner>
+                        <mat-spinner color="accent" [diameter]="35"></mat-spinner>
+                    </ng-template>
+                </button>
+            </mat-card-actions>
+            <div class="successful-message" *ngIf="result?.message"> 
+                <mat-icon>check_circle_outline</mat-icon>
+                <span> {{ result.message }} </span>
+            </div>
+            <div class="error-message" *ngIf="result?.email"> 
+                <mat-icon>error_outline</mat-icon>
+                <span> {{ result.email[0] }} </span>
+            </div>
+        </form>
+    </mat-card>
+</div>
